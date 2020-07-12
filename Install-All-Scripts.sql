@@ -125,8 +125,9 @@ DECLARE @restore_path_full NVARCHAR(MAX); --Used to hold the full backup path in
 DECLARE @restore_path_log NVARCHAR(MAX); --Used to hold the log backup path in our configuration table
 DECLARE @db_sql NVARCHAR(MAX) = N''; --Used to hold the dynamic SQL to create msdbCentral
 DECLARE @tbl_sql NVARCHAR(MAX) = N''; --Used to hold the dynamic SQL that creates tables in msdbCentral
-DECLARE @database_name NVARCHAR(256) = N'msdbCentral'; --Used to hold the name of the database we create to centralize data
+--DECLARE @database_name NVARCHAR(256) = N'msdbCentral'; --Used to hold the name of the database we create to centralize data
 													   --Right now it's hardcoded to msdbCentral, but I made it dynamic in case that changes down the line
+DECLARE @database_name NVARCHAR(256) = N'DBA'; --Used to hold the name of the database we create to centralize data
 DECLARE @cmd NVARCHAR(4000) = N'' --Holds dir cmd 
 DECLARE @FileList TABLE ( BackupFile NVARCHAR(255) ); --Where we dump @cmd
 DECLARE @restore_full BIT = 0 --We use this one
